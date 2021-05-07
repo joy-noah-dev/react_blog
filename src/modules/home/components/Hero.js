@@ -5,6 +5,8 @@ import ButtonGroup from 'modules/commons/ButtonGroup';
 import Button from 'modules/commons/Button';
 import Image from 'modules/commons/Image';
 import Modal from 'modules/commons/Modal';
+import { graph_request } from 'utils/graphql-utils.js'
+import { CMS_GRAPH_URL } from 'envVariables'
 
 const propTypes = {
   ...SectionProps.types
@@ -26,6 +28,7 @@ const Hero = ({
 }) => {
 
   const [videoModalActive, setVideomodalactive] = useState(false);
+  const [profileImage, setProfileImage] = useState('')
 
   const openModal = (e) => {
     e.preventDefault();
@@ -51,6 +54,21 @@ const Hero = ({
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider'
   );
+
+  const url = CMS_GRAPH_URL
+  const query = `
+  query {
+    author(where: {id: "ckadqdbhk00go0148zzxh4bbq"}) {
+      id
+      biography
+      picture {
+        url
+      }
+    }
+  }
+  `
+  graph_request({ url, query })
+  .then(res => setProfileImage(res.author.picture.url))
 
   return (
     <section
@@ -88,7 +106,7 @@ const Hero = ({
             >
               <Image
                 className="has-shadow"
-                src={require('assets/images/video-placeholder.jpg')}
+                src={profileImage}
                 alt="Hero"
                 width={896}
                 height={504} />

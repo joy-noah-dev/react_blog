@@ -6,8 +6,9 @@ import Testimonial from 'modules/home/components/Testimonial';
 import FeaturesSplit from 'modules/home/components/FeaturesSplit';
 import Cta from 'modules/home/components/Cta';
 
-const Home = () => {
 
+
+const Home = () => {
   return (
     <>
       <Hero className="illustration-section-01" />

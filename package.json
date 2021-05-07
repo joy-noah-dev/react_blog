@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.3.16",
     "classnames": "^2.2.6",
+    "graphql": "^15.5.0",
     "heroku": "^7.53.0",
     "lodash": "^4.17.15",
     "node-sass": "^4.13.1",
