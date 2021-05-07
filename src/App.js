@@ -1,14 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-import { useLocation, Switch } from 'react-router-dom';
-import AppRoute from './utils/AppRoute';
-import ScrollReveal from './utils/ScrollReveal';
+import { useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga';
-
-// Layouts
-import LayoutDefault from 'modules/layout/components/LayoutDefault';
-
-// Pages
-import { Home } from 'modules/home';
+import AppRouter from 'router/AppRouter'
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -32,14 +25,8 @@ const App = () => {
   }, [location]);
 
   return (
-    <ScrollReveal
-      ref={childRef}
-      children={() => (
-        <Switch>
-          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-        </Switch>
-      )} />
-  );
+    <AppRouter trackPage={trackPage} childRef={childRef} />
+  )
 }
 
 export default App;
