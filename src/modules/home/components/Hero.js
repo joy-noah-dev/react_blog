@@ -58,7 +58,7 @@ const Hero = ({
   const url = CMS_GRAPH_URL
   const query = `
   query {
-    author(where: {id: "ckadqdbhk00go0148zzxh4bbq"}) {
+    author(where: {id: "ckoe12fww15ww0b74pz6xdj1q"}) {
       id
       biography
       picture {
