@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import { SectionProps } from '../../utils/SectionProps';
-import ButtonGroup from '../elements/ButtonGroup';
-import Button from '../elements/Button';
-import Image from '../elements/Image';
-import Modal from '../elements/Modal';
+import { SectionProps } from 'consts/SectionProps';
+import ButtonGroup from 'modules/commons/ButtonGroup';
+import Button from 'modules/commons/Button';
+import Image from 'modules/commons/Image';
+import Modal from 'modules/commons/Modal';
 
 const propTypes = {
   ...SectionProps.types
@@ -35,7 +35,7 @@ const Hero = ({
   const closeModal = (e) => {
     e.preventDefault();
     setVideomodalactive(false);
-  }   
+  }
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -88,7 +88,7 @@ const Hero = ({
             >
               <Image
                 className="has-shadow"
-                src={require('./../../assets/images/video-placeholder.jpg')}
+                src={require('assets/images/video-placeholder.jpg')}
                 alt="Hero"
                 width={896}
                 height={504} />

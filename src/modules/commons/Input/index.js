@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import FormLabel from './FormLabel';
-import FormHint from './FormHint';
+import FormLabel from 'modules/commons/FormLabel';
+import FormHint from 'modules/commons/FormHint';
 
 const propTypes = {
   children: PropTypes.node,

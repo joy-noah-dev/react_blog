@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { SectionProps } from '../../utils/SectionProps';
-import Input from '../elements/Input';
+import { SectionProps } from 'consts/SectionProps';
+import Input from 'modules/commons/Input';
 
 const propTypes = {
   ...SectionProps.types,
@@ -40,7 +40,7 @@ const Cta = ({
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider',
     split && 'cta-split'
-  );  
+  );
 
   return (
     <section
