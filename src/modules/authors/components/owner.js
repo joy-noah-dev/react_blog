@@ -8,7 +8,9 @@ const Owner = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getOwnerDataRequested())
+    if (authors.owner.picture.url === '') {
+      dispatch(getOwnerDataRequested())
+    }
   }, [])
 
   return (

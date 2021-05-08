@@ -6,7 +6,9 @@ import {
 
 const initialState = {
   owner: {
-    picture: {}
+    picture: {
+      url: ''
+    }
   },
   fetching: false
 }
