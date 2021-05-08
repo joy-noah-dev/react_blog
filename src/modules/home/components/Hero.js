@@ -3,10 +3,8 @@ import classNames from 'classnames';
 import { SectionProps } from 'consts/SectionProps';
 import ButtonGroup from 'modules/commons/ButtonGroup';
 import Button from 'modules/commons/Button';
-import Image from 'modules/commons/Image';
 import Modal from 'modules/commons/Modal';
-import { graph_request } from 'utils/graphql-utils.js'
-import { CMS_GRAPH_URL } from 'envVariables'
+import Owner from 'modules/authors/components/owner'
 
 const propTypes = {
   ...SectionProps.types
@@ -28,7 +26,6 @@ const Hero = ({
 }) => {
 
   const [videoModalActive, setVideomodalactive] = useState(false);
-  const [profileImage, setProfileImage] = useState('')
 
   const openModal = (e) => {
     e.preventDefault();
@@ -54,21 +51,6 @@ const Hero = ({
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider'
   );
-
-  const url = CMS_GRAPH_URL
-  const query = `
-  query {
-    author(where: {id: "ckoe12fww15ww0b74pz6xdj1q"}) {
-      id
-      biography
-      picture {
-        url
-      }
-    }
-  }
-  `
-  graph_request({ url, query })
-  .then(res => setProfileImage(res.author.picture.url))
 
   return (
     <section
@@ -97,21 +79,7 @@ const Hero = ({
               </div>
             </div>
           </div>
-          <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="800">
-            <a
-              data-video="https://player.vimeo.com/video/174002812"
-              href="#0"
-              aria-controls="video-modal"
-              onClick={openModal}
-            >
-              <Image
-                className="has-shadow"
-                src={profileImage}
-                alt="Hero"
-                width={896}
-                height={504} />
-            </a>
-          </div>
+          <Owner />
           <Modal
             id="video-modal"
             show={videoModalActive}

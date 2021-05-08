@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import AppRouter from 'router/AppRouter'
+import store from 'store/store';
+import { Provider } from 'react-redux'
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -25,7 +27,9 @@ const App = () => {
   }, [location]);
 
   return (
-    <AppRouter trackPage={trackPage} childRef={childRef} />
+    <Provider store={store}>
+      <AppRouter trackPage={trackPage} childRef={childRef} />
+    </Provider>
   )
 }
 

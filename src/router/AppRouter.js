@@ -8,6 +8,7 @@ import LayoutDefault from 'modules/layout/components/LayoutDefault';
 
 // Pages
 import { Home } from 'modules/home';
+import { Demo } from 'modules/demo';
 
 const AppRouter = ({
   trackPAge,
@@ -18,7 +19,7 @@ const AppRouter = ({
     children={() => (
       <Switch>
         <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-        <AppRoute exact path="/Home" component={Home} layout={LayoutDefault} />
+        <AppRoute exact path="/Demo" component={Demo} layout={LayoutDefault} />
       </Switch>
     )} />)
 }
