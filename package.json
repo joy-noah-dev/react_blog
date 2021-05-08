@@ -22,6 +22,7 @@
     "yarn": "0.21"
   },
   "scripts": {
+    "prebuild": "npm run sitemap",
     "sitemap": "NODE_PATH=src/ babel-node sitemap-builder.js",
     "start": "react-scripts start",
     "build": "react-scripts build",

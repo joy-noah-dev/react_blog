@@ -18,6 +18,7 @@ const AppRouter = ({
     children={() => (
       <Switch>
         <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+        <AppRoute exact path="/Home" component={Home} layout={LayoutDefault} />
       </Switch>
     )} />)
 }

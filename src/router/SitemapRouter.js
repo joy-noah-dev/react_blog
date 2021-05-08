@@ -1,9 +1,10 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Switch, Route } from 'react-router';
 
 const SitemapRouter = () => (
-	<Route>
+	<Switch>
 		<Route path='/' />
+		<Route path='/home' />
 		<Route path='/about' />
 		<Route path='/projects'>
 			<Route path=':projectName'>
@@ -13,7 +14,7 @@ const SitemapRouter = () => (
 		<Route path='/contacts' />
 		<Route path='/auth' />
 		<Route path='*' />
-	</Route>
+	</Switch>
 );
 
 export default SitemapRouter
