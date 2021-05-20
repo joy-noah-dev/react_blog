@@ -6,6 +6,7 @@ import Button from 'modules/commons/Button';
 import Modal from 'modules/commons/Modal';
 import Owner from 'modules/authors/components/owner'
 
+
 const propTypes = {
   ...SectionProps.types
 }
@@ -27,10 +28,10 @@ const Hero = ({
 
   const [videoModalActive, setVideomodalactive] = useState(false);
 
-  const openModal = (e) => {
+  /*const openModal = (e) => {
     e.preventDefault();
     setVideomodalactive(true);
-  }
+  }*/
 
   const closeModal = (e) => {
     e.preventDefault();
@@ -51,6 +52,7 @@ const Hero = ({
     topDivider && 'has-top-divider',
     bottomDivider && 'has-bottom-divider'
   );
+
 
   return (
     <section

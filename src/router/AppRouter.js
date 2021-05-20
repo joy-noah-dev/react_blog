@@ -9,6 +9,7 @@ import LayoutDefault from 'modules/layout/components/LayoutDefault';
 // Pages
 import { Home } from 'modules/home';
 import { Demo } from 'modules/demo';
+import { CardSearchPage } from 'modules/lorDeck'
 
 const AppRouter = ({
   trackPAge,
@@ -20,6 +21,7 @@ const AppRouter = ({
       <Switch>
         <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
         <AppRoute exact path="/Demo" component={Demo} layout={LayoutDefault} />
+        <AppRoute exact path="/LOR/search" component={CardSearchPage} layout={LayoutDefault} />
       </Switch>
     )} />)
 }
