@@ -24,6 +24,7 @@ const Image = ({
   width,
   height,
   alt,
+  placeholderImg,
   ...props
 }) => {
 
@@ -35,9 +36,9 @@ const Image = ({
     handlePlaceholder(image.current);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  
+
   const placeholderSrc = (w, h) => {
-    return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"%3E%3C/svg%3E`;
+    return placeholderImg;
   }
 
   const handlePlaceholder = (img) => {
@@ -54,13 +55,13 @@ const Image = ({
       placeholder.style.opacity = '0';
       img.className && placeholder.classList.add(img.className);
       placeholder.remove();
-      img.style.display = '';      
+      img.style.display = '';
     }
   }
 
   function onLoad() {
     setLoaded(true);
-  }  
+  }
 
   return (
     <img
