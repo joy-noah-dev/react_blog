@@ -38,7 +38,7 @@ const Image = ({
   }, []);
 
   const placeholderSrc = (w, h) => {
-    return placeholderImg;
+    return `data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"%3E%3C/svg%3E`;
   }
 
   const handlePlaceholder = (img) => {
